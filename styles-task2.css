@@ -1,0 +1,82 @@
+/* Task 1: Create a Basic CSS Grid Layout */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body setup with CSS Grid */
+body {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Main Content Area */
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Content takes 3x space compared to sidebar */
+    gap: 10px;
+}
+
+.content {
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.sidebar {
+    background: #ddd;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Task 2: Implement Responsive Design */
+/* Stack items for smaller screens */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+        grid-template-rows: auto auto auto;
+    }
+
+    .main {
+        grid-template-columns: 1fr; /* Single-column layout */
+    }
+}
+
+/* Task 3: Advanced Grid Layout */
+/* Customize grid columns and rows */
+.main {
+    grid-template-columns: 2fr 1fr; /* Main content takes 2x space of sidebar */
+}
+
+footer {
+    grid-template-rows: auto auto; /* Flexibility for footer rows */
+}
